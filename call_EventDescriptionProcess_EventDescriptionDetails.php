@@ -1,0 +1,102 @@
+<?php
+include("Soap_header_token_EventDescriptionProcess.php");
+include('call_core_orgid.php');
+try {
+$param_EventDescriptionDetails=array("EventID"=>1);
+$response_EventDescriptionDetails=$EventDescriptionProcessWS->__soapCall('GetEventDescriptionDetails',array($param_EventDescriptionDetails));
+echo '<pre>';
+//print_r($response_EventDescriptionDetails);
+
+$result_EventDescriptionDetails=$response_EventDescriptionDetails->GetEventDescriptionDetailsResult;
+
+$result_EventDescriptionDetails_ID=$result_EventDescriptionDetails->ID;
+$result_EventDescriptionDetails_Description=$result_EventDescriptionDetails->Description;
+$result_EventDescriptionDetails_EventType=$result_EventDescriptionDetails->EventType;
+$result_EventDescriptionDetails_InUse=$result_EventDescriptionDetails->InUse;
+$result_EventDescriptionDetails_StartOdo=$result_EventDescriptionDetails->StartOdo;
+$result_EventDescriptionDetails_StartPosition=$result_EventDescriptionDetails->StartPosition;
+$result_EventDescriptionDetails_EndOdo=$result_EventDescriptionDetails->EndOdo;
+$result_EventDescriptionDetails_EndPosition=$result_EventDescriptionDetails->EndPosition;
+$result_EventDescriptionDetails_RecordF3Count=$result_EventDescriptionDetails->RecordF3Count;
+$result_EventDescriptionDetails_UseWarningMessage=$result_EventDescriptionDetails->UseWarningMessage;
+$result_EventDescriptionDetails_AvtivePosition=$result_EventDescriptionDetails->AvtivePosition;
+$result_EventDescriptionDetails_RecordTime=$result_EventDescriptionDetails->RecordTime;
+$result_EventDescriptionDetails_AlarmTime=$result_EventDescriptionDetails->AlarmTime;
+$result_EventDescriptionDetails_RelayTime=$result_EventDescriptionDetails->RelayTime;
+$result_EventDescriptionDetails_Relay2Time=$result_EventDescriptionDetails->Relay2Time;
+$result_EventDescriptionDetails_CriticalTime=$result_EventDescriptionDetails->CriticalTime;
+$result_EventDescriptionDetails_ActiveTime=$result_EventDescriptionDetails->ActiveTime;
+$result_EventDescriptionDetails_ActiveEndTime=$result_EventDescriptionDetails->ActiveEndTime;
+$result_EventDescriptionDetails_TrackTime=$result_EventDescriptionDetails->TrackTime;
+$result_EventDescriptionDetails_TrackInterval=$result_EventDescriptionDetails->TrackInterval;
+$result_EventDescriptionDetails_AlarmState=$result_EventDescriptionDetails->AlarmState;
+$result_EventDescriptionDetails_RelayState=$result_EventDescriptionDetails->RelayState;
+$result_EventDescriptionDetails_Relay2State=$result_EventDescriptionDetails->Relay2State;
+$result_EventDescriptionDetails_SummaryType=$result_EventDescriptionDetails->SummaryType;
+$result_EventDescriptionDetails_SummaryID=$result_EventDescriptionDetails->SummaryID;
+$result_EventDescriptionDetails_Priority=$result_EventDescriptionDetails->Priority;
+$result_EventDescriptionDetails_EventSaveID=$result_EventDescriptionDetails->EventSaveID;
+$result_EventDescriptionDetails_Updated=$result_EventDescriptionDetails->Updated;
+
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
+print_r("ID.".$result_EventDescriptionDetails_ID);
+print "\t";
+print_r("Description.".$result_EventDescriptionDetails_Description);
+print "\t";
+print_r("EventType.".$result_EventDescriptionDetails_EventType);
+print "\t";
+print_r("InUse.".$result_EventDescriptionDetails_InUse);
+print "\t";
+print_r("StartOdo.".$result_EventDescriptionDetails_StartOdo);
+print "\t";
+print_r("StartPosition.".$result_EventDescriptionDetails_StartPosition);
+print "\t";
+print_r("EndOdo.".$result_EventDescriptionDetails_EndOdo);
+print "\t";
+print_r("EndPosition.".$result_EventDescriptionDetails_EndPosition);
+print "\t";
+print_r("RecordF3Count.".$result_EventDescriptionDetails_RecordF3Count);
+print "\t";
+print_r("UseWarningMessage.".$result_EventDescriptionDetails_UseWarningMessage);
+print "\t";
+print_r("AvtivePosition.".$result_EventDescriptionDetails_AvtivePosition);
+print "\t";
+print_r("RecordTime.".$result_EventDescriptionDetails_RecordTime);
+print "\t";
+print_r("AlarmTime.".$result_EventDescriptionDetails_AlarmTime);
+print "\t";
+print_r("RelayTime.".$result_EventDescriptionDetails_RelayTime);
+print "\t";
+print_r("Relay2Time.".$result_EventDescriptionDetails_Relay2Time);
+print "\t";
+print_r("CriticalTime.".$result_EventDescriptionDetails_CriticalTime);
+print "\t";
+print_r("ActiveTime.".$result_EventDescriptionDetails_ActiveTime);
+print "\t";
+print_r("ActiveEndTime.".$result_EventDescriptionDetails_ActiveEndTime);
+print "\t";
+print_r("TrackTime.".$result_EventDescriptionDetails_TrackTime);
+print "\t";
+print_r("TrackInterval.".$result_EventDescriptionDetails_TrackInterval);
+print "\t";
+print_r("AlarmState.".$result_EventDescriptionDetails_AlarmState);
+print "\t";
+print_r("RelayState.".$result_EventDescriptionDetails_RelayState);
+print "\t";
+print_r("Relay2State.".$result_EventDescriptionDetails_Relay2State);
+print "\t";
+print_r("SummaryType.".$result_EventDescriptionDetails_SummaryType);
+print "\t";
+print_r("SummaryID.".$result_EventDescriptionDetails_SummaryID);
+print "\t";
+print_r("Priority.".$result_EventDescriptionDetails_Priority);
+print "\t";
+print_r("EventSaveID.".$result_EventDescriptionDetails_EventSaveID);
+print "\t";
+print_r("Updated.".$result_EventDescriptionDetails_Updated);
+print "\t";
+echo '<br>';
+
+?>
