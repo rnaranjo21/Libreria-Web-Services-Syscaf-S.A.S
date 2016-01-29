@@ -28,9 +28,6 @@ $result_GPSPositionsV2SinceID_DistanceSinceReading=$result_GPSPositionsV2SinceID
 $result_GPSPositionsV2SinceID_Velocity=$result_GPSPositionsV2SinceID[$i]->Velocity;
 $result_GPSPositionsV2SinceID_IsAVL=$result_GPSPositionsV2SinceID[$i]->IsAVL;
 $result_GPSPositionsV2SinceID_CoordValid=$result_GPSPositionsV2SinceID[$i]->CoordValid;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
 
 print_r("ID.".$result_GPSPositionsV2SinceID_ID);
 print "\t";
@@ -65,5 +62,8 @@ print "\t";
 print_r("CoordValid.".$result_GPSPositionsV2SinceID_CoordValid);
 print "\t";
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

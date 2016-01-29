@@ -31,9 +31,7 @@ for ($i=0; $i <count($result_DefaultVehicleConfigParams) ; $i++) {
     $result_DefaultVehicleConfigParams_value_DeviceDefault=$result_DefaultVehicleConfigParams[$i]->Value->DeviceDefault;
     $result_DefaultVehicleConfigParams_value_InputID=$result_DefaultVehicleConfigParams[$i]->Value->InputID;
     //$result_DefaultVehicleConfigParams_value_Units=$result_DefaultVehicleConfigParams[$i]->Value->Units;
- } catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}   
+  
 print_r("ParameterID.".$result_DefaultVehicleConfigParams_value_ID);
 print "\t";        
 print_r("Description.".$result_DefaultVehicleConfigParams_value_Description);
@@ -82,3 +80,7 @@ print "\t";
 //print "\t";
 echo '<br>';
 }
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}  
+?>

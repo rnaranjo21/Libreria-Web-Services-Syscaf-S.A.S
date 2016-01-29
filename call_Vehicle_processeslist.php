@@ -60,9 +60,7 @@ $Vehicle_Created=$Vehicle_result[$i]->Created;
 $date_Created = new DateTime($Vehicle_Created);
 $Vehicle_Active=$Vehicle_result[$i]->Active;
 $Vehicle_ActiveState=$Vehicle_result[$i]->ActiveState;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$Vehicle_ID);
 print "\t";
 print_r("SiteID.".$Vehicle_Site_Id);
@@ -95,5 +93,8 @@ print_r("ActiveState.".$Vehicle_ActiveState);
 print "\t";
 echo '<br>';
 
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

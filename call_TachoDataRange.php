@@ -20,9 +20,7 @@ $result_TachoData_range_I1=$result_TachoData_range[$i]->I1;
 $result_TachoData_range_I2=$result_TachoData_range[$i]->I2;
 $result_TachoData_range_I3=$result_TachoData_range[$i]->I3;
 $result_TachoData_range_I4=$result_TachoData_range[$i]->I4;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("Time.".$date_Tacho_Time->format('d/m/Y (H:i:s)'));
 print "\t";
 print_r("Speed.".$result_TachoData_range_Speed);
@@ -45,5 +43,8 @@ print "\t";
 
 echo '<br>';
 
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

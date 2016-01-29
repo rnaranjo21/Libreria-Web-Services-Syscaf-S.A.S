@@ -106,9 +106,7 @@ $date_Created = new DateTime($Vehicle_Created);
 $Vehicle_Active=$result_subTrip_driver_Location[$i]->Vehicle->Active;
 $Vehicle_ActiveState=$result_subTrip_driver_Location[$i]->Vehicle->ActiveState;
 
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 
 print_r("TripID.".$result_subTrip_driver_TripID);
 print "\t";
@@ -148,6 +146,8 @@ print_r("LastOdometer.".$Vehicle_LastOdometer);
 echo '<br>';
 }
 
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 
 ?>

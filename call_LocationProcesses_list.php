@@ -28,9 +28,7 @@ $result_location_list_ShowOnMap=$result_location_list[$i]->ShowOnMap;
 $result_location_list_CustomerCode=$result_location_list[$i]->CustomerCode;
 $result_location_list_TaxType=$result_location_list[$i]->TaxType;
 $result_location_list_SiteID=$result_location_list[$i]->SiteID;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_location_list_ID);
 print "\t";
 print_r("Name.".$result_location_list_Name);
@@ -68,5 +66,8 @@ print "\t";
 print_r("SiteID.".$result_location_list_SiteID);
 print "\t";
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

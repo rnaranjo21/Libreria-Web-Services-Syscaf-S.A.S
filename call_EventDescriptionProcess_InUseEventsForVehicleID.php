@@ -39,9 +39,7 @@ $result_InUseEventsForVehicleID_SummaryID=$result_InUseEventsForVehicleID[$i]->S
 $result_InUseEventsForVehicleID_Priority=$result_InUseEventsForVehicleID[$i]->Priority;
 $result_InUseEventsForVehicleID_EventSaveID=$result_InUseEventsForVehicleID[$i]->EventSaveID;
 $result_InUseEventsForVehicleID_Updated=$result_InUseEventsForVehicleID[$i]->Updated;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_InUseEventsForVehicleID_ID);
 print "\t";
 print_r("Description.".$result_InUseEventsForVehicleID_Description);
@@ -100,5 +98,7 @@ print_r("Updated.".$result_InUseEventsForVehicleID_Updated);
 print "\t";
 echo '<br>';
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>

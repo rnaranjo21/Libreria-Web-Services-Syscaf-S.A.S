@@ -49,9 +49,7 @@ $result_Trip_total_daterange_StartGPSID=$result_Trip_total_daterange[$i]->StartG
 $result_Trip_total_daterange_EndGPSID=$result_Trip_total_daterange[$i]->EndGPSID;
 $result_Trip_total_daterange_StartEngineSeconds=$result_Trip_total_daterange[$i]->StartEngineSeconds;
 $result_Trip_total_daterange_EndEngineSeconds=$result_Trip_total_daterange[$i]->EndEngineSeconds;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_Trip_total_daterange_id);
 print "\t";
 print_r("VehicleID.".$result_Trip_total_daterange_Trip_VehicleID);
@@ -124,5 +122,8 @@ print_r("EndEngineSeconds.".$result_Trip_total_daterange_EndEngineSeconds);
 print "\t";
 
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

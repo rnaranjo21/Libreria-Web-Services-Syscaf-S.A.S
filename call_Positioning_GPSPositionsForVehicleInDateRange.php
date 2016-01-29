@@ -29,9 +29,7 @@ $result_GPSPositionsForVehicleInDateRange_DistanceSinceReading=$result_GPSPositi
 $result_GPSPositionsForVehicleInDateRange_Velocity=$result_GPSPositionsForVehicleInDateRange[$i]->Velocity;
 $result_GPSPositionsForVehicleInDateRange_IsAVL=$result_GPSPositionsForVehicleInDateRange[$i]->IsAVL;
 $result_GPSPositionsForVehicleInDateRange_CoordValid=$result_GPSPositionsForVehicleInDateRange[$i]->CoordValid;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 
 print_r("ID.".$result_GPSPositionsForVehicleInDateRange_ID);
 print "\t";
@@ -68,5 +66,9 @@ print "\t";
 print_r("CoordValid.".$result_GPSPositionsForVehicleInDateRange_CoordValid);
 print "\t";
 echo '<br>';
+}
+
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

@@ -31,9 +31,6 @@ $result_GPSPositionsInDateRange_Velocity=$result_GPSPositionsInDateRange[$i]->Ve
 $result_GPSPositionsInDateRange_IsAVL=$result_GPSPositionsInDateRange[$i]->IsAVL;
 $result_GPSPositionsInDateRange_CoordValid=$result_GPSPositionsInDateRange[$i]->CoordValid;
 
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
 
 print_r("ID.".$result_GPSPositionsInDateRange_ID);
 print "\t";
@@ -70,6 +67,9 @@ print "\t";
 print_r("CoordValid.".$result_GPSPositionsInDateRange_CoordValid);
 print "\t";
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 
 

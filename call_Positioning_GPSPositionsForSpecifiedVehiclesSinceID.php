@@ -27,9 +27,7 @@ $result_PositionsForSpecifiedVehiclesSinceID_DistanceSinceReading=$result_Positi
 $result_PositionsForSpecifiedVehiclesSinceID_Velocity=$result_PositionsForSpecifiedVehiclesSinceID[$i]->Velocity;
 $result_PositionsForSpecifiedVehiclesSinceID_IsAVL=$result_PositionsForSpecifiedVehiclesSinceID[$i]->IsAVL;
 $result_PositionsForSpecifiedVehiclesSinceID_CoordValid=$result_PositionsForSpecifiedVehiclesSinceID[$i]->CoordValid;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 
 print_r("ID.".$result_PositionsForSpecifiedVehiclesSinceID_ID);
 print "\t";
@@ -66,5 +64,8 @@ print "\t";
 print_r("CoordValid.".$result_PositionsForSpecifiedVehiclesSinceID_CoordValid);
 print "\t";
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

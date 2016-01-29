@@ -18,9 +18,7 @@ $result_VehicleDevicesConfigList_IsActive=$result_VehicleDevicesConfigList[$i]->
 $result_VehicleDevicesConfigList_Updated=$result_VehicleDevicesConfigList[$i]->Value->Updated;
 $result_VehicleDevicesConfigList_InputID=$result_VehicleDevicesConfigList[$i]->Value->InputID;
 $result_VehicleDevicesConfigList_PowerDeviceID=$result_VehicleDevicesConfigList[$i]->Value->PowerDeviceID;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_VehicleDevicesConfigList_ID);
 print "\t";
 print_r("DeviceType.".$result_VehicleDevicesConfigList_DeviceType);
@@ -39,5 +37,7 @@ print_r("PowerDeviceID.".$result_VehicleDevicesConfigList_PowerDeviceID);
 print "\t";
 echo '<br>';
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>

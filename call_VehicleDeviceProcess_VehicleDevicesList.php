@@ -16,11 +16,9 @@ for ($i=0; $i <count($result_VehicleDevicesList) ; $i++) {
 	$result_VehicleDevicesList_CanRecordInterval=$result_VehicleDevicesList[$i]->Value->CanRecordInterval;
 	$result_VehicleDevicesList_IsActive=$result_VehicleDevicesList[$i]->Value->IsActive;
     $result_VehicleDevicesList_Updated=$result_VehicleDevicesList[$i]->Value->Updated;
-	$result_VehicleDevicesList_InputID=$result_VehicleDevicesList[$i]->Value->InputID;
+	//$result_VehicleDevicesList_InputID=$result_VehicleDevicesList[$i]->Value->InputID;
 	$result_VehicleDevicesList_PowerDeviceID=$result_VehicleDevicesList[$i]->Value->PowerDeviceID;
-	} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+	
 print_r("ID.".$result_VehicleDevicesList_ID);
 print "\t";	
 print_r("ID.".$result_VehicleDevicesList_DeviceType);
@@ -33,12 +31,15 @@ print_r("ID.".$result_VehicleDevicesList_IsActive);
 print "\t";	
 print_r("ID.".$result_VehicleDevicesList_Updated);
 print "\t";	
-print_r("ID.".$result_VehicleDevicesList_InputID);
-print "\t";
+/*print_r("ID.".$result_VehicleDevicesList_InputID);
+print "\t";*/
 print_r("ID.".$result_VehicleDevicesList_PowerDeviceID);
 print "\t";	
 
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 
 ?>

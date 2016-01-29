@@ -37,9 +37,7 @@ $result_EventList_SummaryID=$result_EventList[$i]->SummaryID;
 $result_EventList_Priority=$result_EventList[$i]->Priority;
 $result_EventList_EventSaveID=$result_EventList[$i]->EventSaveID;
 $result_EventList_Updated=$result_EventList[$i]->Updated;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_EventList_ID);
 print "\t";
 print_r("Description.".$result_EventList_Description);
@@ -98,5 +96,7 @@ print_r("Updated.".$result_EventList_Updated);
 print "\t";
 echo '<br>';
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>

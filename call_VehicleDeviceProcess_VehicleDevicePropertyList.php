@@ -17,9 +17,7 @@ $result_VehicleDevicePropertyList_Property=$result_VehicleDevicePropertyList[$i]
 $result_VehicleDevicePropertyList_Value=$result_VehicleDevicePropertyList[$i]->Value;
 $result_VehicleDevicePropertyList_DateUpdated=$result_VehicleDevicePropertyList[$i]->DateUpdated;
 
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_VehicleDevicePropertyList_ID);
 print "\t";
 print_r("VehicleID.".$result_VehicleDevicePropertyList_VehicleID);
@@ -33,5 +31,8 @@ print "\t";
 print_r("DateUpdated.".$result_VehicleDevicePropertyList_DateUpdated);
 print "\t";
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

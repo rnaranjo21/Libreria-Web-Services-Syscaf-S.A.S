@@ -11,13 +11,13 @@ $Vehicle_report_list=$response_vehicles_reporting_list->GetVehicleReportingGroup
 for($i=0;$i<count($Vehicle_report_list);$i++){
 $Vehicle_report_ID=$Vehicle_report_list[$i]->ID;
 $Vehicle_report_Name=$Vehicle_report_list[$i]->Name;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r($Vehicle_report_ID);
 print "\t";
 print_r($Vehicle_report_Name);
 echo '<br>';
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>

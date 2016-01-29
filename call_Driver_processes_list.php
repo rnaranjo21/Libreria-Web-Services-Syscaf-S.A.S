@@ -25,9 +25,7 @@ $Driver_Created=$Driver_result[$i]->Created;
 $date_Created = new DateTime($Driver_Created);
 $Driver_Updated=$Driver_result[$i]->Updated;
 $date_Updated = new DateTime($Driver_Updated);
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$Driver_ID);
 print "\t";
 print_r("SiteID.".$Driver_SiteID);
@@ -48,6 +46,8 @@ echo '<br>';
 
 
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 
 ?>

@@ -14,9 +14,7 @@ for($i=0;$i<count($Site_list);$i++){
 	$Site_result_ToDriverID=$Site_list[$i]->ToDriverID;
 	$Site_result_FromVehicleID=$Site_list[$i]->ToDriverID;
 	$Site_result_ToVehicleID=$Site_list[$i]->FromVehicleID;
-	} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+	
 	print_r("ID.".$Site_result_ID);
     print "\t";
     print_r("Name.".$Site_result_Name);
@@ -27,4 +25,7 @@ for($i=0;$i<count($Site_list);$i++){
     print "\t";
     echo '<br>';
 	}
+	} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>

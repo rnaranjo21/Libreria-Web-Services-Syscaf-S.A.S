@@ -23,9 +23,6 @@ $Result_trip_range_TripEnd=$Result_trip_range[$i]->TripEnd;
 $date_Trip_end = new DateTime($Result_trip_range_TripEnd);
 $Result_trip_range_CategoryID=$Result_trip_range[$i]->CategoryID;
 
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
 print_r("ID.".$Result_trip_range_ID);
 print "\t";
 print_r("VehicleID.".$Result_trip_range_VehicleID);
@@ -43,5 +40,9 @@ print "\t";
 print_r("TripEnd.".$Result_trip_range_TripEnd);
 print "\t";
  echo '<br>';
+}
+
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

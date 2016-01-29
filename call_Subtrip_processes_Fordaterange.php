@@ -51,9 +51,7 @@ $result_subTrip_driver_EndGPSID=$result_subTrip_driver_ForDaterange[$i]->EndGPSI
 $result_subTrip_driver_StartEngineSeconds=$result_subTrip_driver_ForDaterange[$i]->StartEngineSeconds;
 $result_subTrip_driver_EndEngineSeconds=$result_subTrip_driver_ForDaterange[$i]->EndEngineSeconds;
 $result_subTrip_driver_StandingTime=$result_subTrip_driver_ForDaterange[$i]->StandingTime;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("TripID.".$result_subTrip_driver_TripID);
 print "\t";
 print_r("Seq.".$result_subTrip_driver_Seq);
@@ -131,5 +129,8 @@ print "\t";
 print_r("StandingTime.".$result_subTrip_driver_StandingTime);
 print "\t";
 echo '<br>';
+}
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
 }
 ?>

@@ -34,9 +34,7 @@ $result_recordedEvent_vehicle_Litres=$result_EventID[$i]->Litres;
 $result_recordedEvent_vehicle_F3Parameter=$result_EventID[$i]->F3Parameter;
 $result_recordedEvent_vehicle_F3Value=$result_EventID[$i]->F3Value;
 
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 print_r("ID.".$result_recordedEvent_vehicle_ID);
 print "\t";
 print_r("VehicleID.".$result_recordedEvent_vehicle_VehicleID);
@@ -83,5 +81,7 @@ print_r("F3Value.".$result_recordedEvent_vehicle_F3Value);
 print "\t";
 echo '<br>';
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>

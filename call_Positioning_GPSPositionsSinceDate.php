@@ -2,7 +2,7 @@
 include("Soap_header_token_Positioning.php");
 include('call_core_orgid.php');
 try {
-$DateTime='2016-01-21T07:30:00';
+$DateTime='2016-01-28T14:30:00';
 
 $param_GPSPositionsSinceDate=array("LastDate"=>$DateTime);
 $response_GPSPositionsSinceDate=$PositioningWS ->__soapCall('GetGPSPositionsSinceDate',array($param_GPSPositionsSinceDate));
@@ -29,9 +29,7 @@ $result_GPSPositionsSinceData_DistanceSinceReading=$result_GPSPositionsSinceData
 $result_GPSPositionsSinceData_Velocity=$result_GPSPositionsSinceData[$i]->Velocity;
 $result_GPSPositionsSinceData_IsAVL=$result_GPSPositionsSinceData[$i]->IsAVL;
 $result_GPSPositionsSinceData_CoordValid=$result_GPSPositionsSinceData[$i]->CoordValid;
-} catch (SoapFault $fault) {
-    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
-}
+
 
 print_r("ID.".$result_GPSPositionsSinceData_ID);
 print "\t";
@@ -69,5 +67,7 @@ print_r("CoordValid.".$result_GPSPositionsSinceData_CoordValid);
 print "\t";
 echo '<br>';
 }
-
+} catch (SoapFault $fault) {
+    trigger_error("SOAP Fault: (faultcode: {$fault->faultcode}, faultstring: {$fault->faultstring})", E_USER_ERROR);
+}
 ?>
